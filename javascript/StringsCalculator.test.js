@@ -62,4 +62,12 @@ describe('StringsCalculator', () => {
 
     expect(result).toBe(21);
   });
+
+  it.skip('negatives not allowed', () => {
+    const stringsCalculator = new StringsCalculator();
+
+    stringsCalculator.add('1,4,-1');
+
+    expect(stringsCalculator.calculate).toThrowError();
+  });
 });
