@@ -40,4 +40,14 @@ describe('StringsCalculator', () => {
 
     expect(result).toBe(45);
   });
+
+  it('handle new lines between numbers', () => {
+    const stringsCalculator = new StringsCalculator();
+
+    stringsCalculator.add('1\n2,3');
+
+    const result = stringsCalculator.calculate();
+
+    expect(result).toBe(6);
+  });
 });
