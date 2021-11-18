@@ -11,7 +11,7 @@ describe('StringsCalculator', () => {
     expect(result).toBe(0);
   });
   
-  it.skip('works with 1 number', () => {
+  it('works with 1 number', () => {
     const stringsCalculator = new StringsCalculator();
 
     stringsCalculator.add('1');
@@ -21,7 +21,7 @@ describe('StringsCalculator', () => {
     expect(result).toBe(1);
   });
 
-  it.skip('works with 2 numbers', () => {
+  it('works with 2 numbers', () => {
     const stringsCalculator = new StringsCalculator();
 
     stringsCalculator.add('1,2');

@@ -1,11 +1,16 @@
 class StringsCalculator  {
 
+  constructor() {
+    this.numbers = [];
+  }
+
   add(input) {
-    throw Error('Implement me');
+    if (!input) this.numbers.push(0);
+    else this.numbers = [...this.numbers, ...input.split(',')]
   }
 
   calculate() {
-    return 0;
+    return this.numbers.reduce((previous, current) => Number(previous) + Number(current), 0); 
   }
 };
 
