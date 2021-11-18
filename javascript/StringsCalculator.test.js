@@ -68,6 +68,17 @@ describe('StringsCalculator', () => {
 
     stringsCalculator.add('1,4,-1');
 
-    expect(stringsCalculator.calculate).toThrowError();
+    expect(stringsCalculator.calculate()).toThrow(Error);
+  });
+
+  it('ignores big numbers (n > 1000)', () => {
+    const stringsCalculator = new StringsCalculator();
+
+    stringsCalculator.add('2;1001');
+    // stringsCalculator.add('2 + 42069 = 2');
+
+    const result = stringsCalculator.calculate();
+
+    expect(result).toBe(2);
   });
 });
