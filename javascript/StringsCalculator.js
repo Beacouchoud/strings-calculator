@@ -6,7 +6,7 @@ class StringsCalculator  {
 
   add(input) {
     if (!input) this.numbers.push(0);
-    else this.numbers = [...this.numbers, ...input.split(',')]
+    else this.numbers = [...this.numbers, ...input.split(/[,\n]/)]
   }
 
   calculate() {
