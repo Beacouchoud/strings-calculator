@@ -31,7 +31,7 @@ describe('StringsCalculator', () => {
     expect(result).toBe(3);
   });
 
-  it.skip('works with n numbers', () => {
+  it('works with n numbers', () => {
     const stringsCalculator = new StringsCalculator();
 
     stringsCalculator.add('1,2,3,4,5,6,7,8,9');
