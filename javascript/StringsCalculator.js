@@ -2,6 +2,7 @@ class StringsCalculator  {
 
   constructor() {
     this.numbers = [];
+    this.negativeNumbers = [];
   }
 
   add(input) {
@@ -13,22 +14,23 @@ class StringsCalculator  {
   }
 
   calculate() {
-   this.handleNegativeNumbers();
-   return this.numbers.reduce((previous, current) => Number(previous) + Number(current), 0); 
+   if (this.handleNegativeNumbers()) {
+    throw Error('negatives not allowed: ' + this.negativeNumbers.join(' '));
+   } else {
+    return this.numbers
+                .filter(n => n <= 1000)
+                .reduce((previous, current) => Number(previous) + Number(current), 0);
+    }
   }
 
   handleNegativeNumbers() {
-    const negativeNumbers = this.numbers.filter(n => n < 0);
-    console.log(negativeNumbers);
-    if (negativeNumbers.length) {
-      console.log("error");
-      throw new Error('negatives not allowed: ' + negativeNumbers.join(' '));
-    }
+    this.negativeNumbers = this.numbers.filter(n => n < 0);
+    return (this.negativeNumbers.length===0) ? false : true;
   }
 };
 
 module.exports = StringsCalculator;
 
 let calc = new StringsCalculator();
-calc.add("1,4,1");
-calc.calculate();
+calc.add("1,4;1/;2000\n3");
+console.log(calc.calculate());

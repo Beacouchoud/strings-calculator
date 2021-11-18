@@ -2,24 +2,14 @@
 
 [Kata Definition](https://github.com/Creditas/challenge/blob/master/beginning-career/strings-calculator/README.md)
 
-## Setup
-
-If you're using NPM
+## How to install
 
 `$> npm install`
 
-If you're using yarn
-
-`$> yarn install`
-
-## Run tests
+## How to run tests
 
 `$> npm test`
 
-or
+## How to use
 
-`$> yarn test`
-
-## Testing dependencies
-
-In this project we added [`jest`](https://jestjs.io/) as testing framework. If you feel more comfortable using another testing framework, feel free to change it!
+`$> npm start`
