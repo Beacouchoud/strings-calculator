@@ -50,4 +50,16 @@ describe('StringsCalculator', () => {
 
     expect(result).toBe(6);
   });
+
+  it('multiple delimiters are allowed', () => {
+    const stringsCalculator = new StringsCalculator();
+
+    stringsCalculator.add('1,4');
+    stringsCalculator.add(',5;6');
+    stringsCalculator.add(',3|2');
+
+    const result = stringsCalculator.calculate();
+
+    expect(result).toBe(21);
+  });
 });
